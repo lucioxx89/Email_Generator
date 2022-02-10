@@ -1,11 +1,11 @@
-import PersonalEmail from "./components/PersonalEmail";
+import SuggestedEmailsList from "./components/SuggestedEmailsList";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <h1>Email Generator</h1>
-      <PersonalEmail></PersonalEmail>
+      <SuggestedEmailsList></SuggestedEmailsList>
     </div>
   );
 }
