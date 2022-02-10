@@ -14,7 +14,7 @@ function SuggestedEmailsList() {
 
   return (
     <ul>
-      {generateRandomWords(7).map((alias) => (
+      {generateRandomWords(10).map((alias) => (
         <SuggestedEmail alias={alias} domain={domain} />
       ))}
     </ul>
