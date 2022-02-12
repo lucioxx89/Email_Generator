@@ -3,9 +3,11 @@ function SuggestedEmail(props) {
   const domain = props.domain;
 
   return (
-    <div class="card-body">
+    <>
+      <div class="list-group-item w-10" />
+      <i class="bi bi-clipboard"></i>
       {alias}@{domain}
-    </div>
+    </>
   );
 }
 
