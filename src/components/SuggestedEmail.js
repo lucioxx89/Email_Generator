@@ -4,7 +4,7 @@ function SuggestedEmail(props) {
 
   return (
     <>
-      <div class="list-group-item w-10" />
+      <div class="list-group-item w-10 " />
       <i class="bi bi-clipboard"></i>
       {alias}@{domain}
     </>
