@@ -3,9 +3,9 @@ function SuggestedEmail(props) {
   const domain = props.domain;
 
   return (
-    <li>
+    <div class="card-body">
       {alias}@{domain}
-    </li>
+    </div>
   );
 }
 

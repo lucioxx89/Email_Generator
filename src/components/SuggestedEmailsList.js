@@ -13,11 +13,11 @@ function SuggestedEmailsList() {
   };
 
   return (
-    <ul>
+    <div class="card">
       {generateRandomWords(10).map((alias) => (
         <SuggestedEmail alias={alias} domain={domain} />
       ))}
-    </ul>
+    </div>
   );
 }
 
