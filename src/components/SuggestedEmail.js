@@ -1,3 +1,5 @@
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
 function SuggestedEmail(props) {
   const alias = props.alias;
   const domain = props.domain;
