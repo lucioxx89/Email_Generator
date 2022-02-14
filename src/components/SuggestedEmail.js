@@ -1,4 +1,4 @@
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 
 function SuggestedEmail(props) {
   const alias = props.alias;
@@ -9,13 +9,13 @@ function SuggestedEmail(props) {
   };
 
   return (
-    <>
-      <div class="list-group-item w-10 " />
-      <button onClick={clickHandler}>
-        <i class="bi bi-clipboard"></i>
-      </button>
+    <div class="p-4 border-1">
       {alias}@{domain}
-    </>
+      <i
+        onClick={clickHandler}
+        class="bi bi-clipboard cursor-pointer pl-10 "
+      ></i>
+    </div>
   );
 }
 
