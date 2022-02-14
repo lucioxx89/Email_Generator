@@ -15,8 +15,8 @@ function SuggestedEmailsList() {
   return (
     <div>
       <ul class="list-group-flush">
-        {generateRandomWords(10).map((alias) => (
-          <SuggestedEmail alias={alias} domain={domain} />
+        {generateRandomWords(10).map((alias, index) => (
+          <SuggestedEmail alias={alias} domain={domain} key={index} />
         ))}
       </ul>
     </div>

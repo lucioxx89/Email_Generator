@@ -9,7 +9,7 @@ function SuggestedEmail(props) {
   };
 
   return (
-    <div class="p-4 border-1">
+    <div class="p-4 border-1 border-radius ">
       {alias}@{domain}
       <i
         onClick={clickHandler}
