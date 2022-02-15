@@ -13,7 +13,9 @@ function SuggestedEmailsList() {
   console.log("minimum year", minimunYear);
 
   const randomYear = () => {
-    return Math.random() * (maximumYear - minimunYear) + minimunYear;
+    return (Math.random() * (maximumYear - minimunYear) + minimunYear).toFixed(
+      0
+    );
   };
   console.log("random Year", randomYear());
 
