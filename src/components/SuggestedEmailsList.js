@@ -6,15 +6,16 @@ function SuggestedEmailsList() {
   const yearToday = new Date().getFullYear();
   console.log("year Today", yearToday);
 
-  const maximumyear = yearToday - 18;
-  console.log("maximum year", maximumyear);
+  const maximumYear = yearToday - 18;
+  console.log("maximum year", maximumYear);
 
   const minimunYear = yearToday - 60;
   console.log("minimum year", minimunYear);
 
   const randomYear = () => {
-    return "not Implemented";
+    return Math.random() * (maximumYear - minimunYear) + minimunYear;
   };
+  console.log("random Year", randomYear());
 
   const generateRandomWords = (emailLength) => {
     const randomWords = [];
