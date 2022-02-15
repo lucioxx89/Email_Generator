@@ -12,6 +12,11 @@ function SuggestedEmailsList() {
   const minimunYear = yearToday - 60;
   console.log("minimum year", minimunYear);
 
+  // const randomYear = (
+  //   Math.random() * (maximumYear - minimunYear) +
+  //   minimunYear
+  // ).toFixed(0);
+
   const getRandomYear = (
     Math.random() * (maximumYear - minimunYear) +
     minimunYear
@@ -21,23 +26,23 @@ function SuggestedEmailsList() {
     // Alternative
     // (Math.random() * (maximumYear - minimunYear) + minimunYear).toFixed(0);
     if (getRandomYear > 1982) {
-      return getRandomYear;
-    } else return "smaller";
+      return getRandomYear.toString().slice(-2);
+    } else return getRandomYear;
   };
-  //   if (
-  //     Math.floor(Math.random() * (maximumYear - minimunYear) + minimunYear) >
-  //     1990
-  //   ) {
-  //     return "true";
-  //   } else return "false";
-  // };
-  console.log("random Year", randomYear());
+  // //   if (
+  // //     Math.floor(Math.random() * (maximumYear - minimunYear) + minimunYear) >
+  // //     1990
+  // //   ) {
+  // //     return "true";
+  // //   } else return "false";
+  // // };
+  // console.log("random Year", randomYear);
 
   const generateRandomWords = (emailLength) => {
     const randomWords = [];
     for (var i = 0; i < emailLength; i++) {
-      // const word = Math.random().toString(36).substring(2, 10);
-      const word = "word";
+      const word = Math.random().toString(36).substring(2, 10);
+      // const word = "word";
       randomWords.push(word + "_" + randomYear());
     }
     return randomWords;
