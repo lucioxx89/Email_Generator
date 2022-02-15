@@ -12,11 +12,25 @@ function SuggestedEmailsList() {
   const minimunYear = yearToday - 60;
   console.log("minimum year", minimunYear);
 
+  const getRandomYear = (
+    Math.random() * (maximumYear - minimunYear) +
+    minimunYear
+  ).toFixed(0);
+
   const randomYear = () => {
-    return (Math.random() * (maximumYear - minimunYear) + minimunYear).toFixed(
-      0
-    );
+    // Alternative
+    // (Math.random() * (maximumYear - minimunYear) + minimunYear).toFixed(0);
+    if (getRandomYear > 1982) {
+      return getRandomYear;
+    } else return "smaller";
   };
+  //   if (
+  //     Math.floor(Math.random() * (maximumYear - minimunYear) + minimunYear) >
+  //     1990
+  //   ) {
+  //     return "true";
+  //   } else return "false";
+  // };
   console.log("random Year", randomYear());
 
   const generateRandomWords = (emailLength) => {
