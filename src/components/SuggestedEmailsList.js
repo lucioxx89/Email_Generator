@@ -3,6 +3,15 @@ import SuggestedEmail from "./SuggestedEmail";
 function SuggestedEmailsList() {
   const domain = "luciano-colabraro.com";
 
+  const yearToday = new Date().getFullYear();
+  console.log("year Today", yearToday);
+
+  const maximumyear = yearToday - 18;
+  console.log("maximum year", maximumyear);
+
+  const minimunYear = yearToday - 60;
+  console.log("minimum year", minimunYear);
+
   const randomYear = () => {
     return "not Implemented";
   };
@@ -19,7 +28,7 @@ function SuggestedEmailsList() {
 
   return (
     <div>
-      <ul class="list-group-flush">
+      <ul className="list-group-flush">
         {generateRandomWords(10).map((alias, index) => (
           <SuggestedEmail alias={alias} domain={domain} key={index} />
         ))}

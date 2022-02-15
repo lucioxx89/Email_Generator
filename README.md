@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+To do
+
+1. Get today's year as a number and store it in a variable **year_today**
+
+2. Substract 18 from that number to get the year that it was 18 years ago and store it in the variable **maximum_year**
+
+3. Do the same for today 60 years ago and store that year number as **minimum_year**
+
+4. Write code that picks a random number in between AND including the two numbers we calculated, and store this in the varible **random_year**
+
+5. Randomly **remove the first 2 digets of that random_year value**, so that sometimes the random_year is only the two last digests (1995 becomes 95) and sometimes the year is written in full length (1995).
+
+--> Now your function should sometimes return a two diget number and sometimes a four diget number but always represent birth years for people who are in the age range of 18 to 60
