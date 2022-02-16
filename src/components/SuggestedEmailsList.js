@@ -33,6 +33,7 @@ function SuggestedEmailsList() {
       const word = Math.random().toString(36).substring(2, 10);
 
       randomWords.push(word + "_" + randomYear());
+      randomWords.push(randomYear() + "_" + word);
     }
     return randomWords;
   };
