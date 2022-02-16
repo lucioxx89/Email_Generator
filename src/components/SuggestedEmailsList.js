@@ -1,4 +1,5 @@
 import SuggestedEmail from "./SuggestedEmail";
+// import names_list from "../names_List/names_list.json";
 
 function SuggestedEmailsList() {
   const domain = "luciano-colabraro.com";
