@@ -1,5 +1,5 @@
 import SuggestedEmail from "./SuggestedEmail";
-// import names_list from "../names_List/names_list.json";
+import FirstNamesList from "../assets/FirstNamesList.json";
 
 function SuggestedEmailsList() {
   const domain = "luciano-colabraro.com";
@@ -20,21 +20,34 @@ function SuggestedEmailsList() {
     }
   };
 
-  const generateRandomWords = (emailLength) => {
-    const randomWords = [];
-    for (var i = 0; i < emailLength; i++) {
-      const word = Math.random().toString(36).substring(2, 10);
+  const randomName = () => {
+    const maximumIndex = FirstNamesList.length - 1;
+    const minimumIndex = 0;
+    const index = (
+      Math.random() * (maximumIndex - minimumIndex) +
+      minimumIndex
+    ).toFixed(0);
 
-      randomWords.push(word + "_" + randomYear());
-      randomWords.push(randomYear() + "_" + word);
+    return FirstNamesList[index].toLowerCase();
+  };
+
+  const generateRandomAliases = (emailLength) => {
+    const randomAliases = [];
+    for (var i = 0; i < emailLength; i++) {
+      if (Math.random() < 0.5) {
+        randomAliases.push(randomName() + randomYear());
+      } else {
+        randomAliases.push(randomYear() + randomName());
+      }
     }
-    return randomWords;
+
+    return randomAliases;
   };
 
   return (
     <div>
       <ul className="list-group-flush">
-        {generateRandomWords(10).map((alias, index) => (
+        {generateRandomAliases(10).map((alias, index) => (
           <SuggestedEmail alias={alias} domain={domain} key={index} />
         ))}
       </ul>
