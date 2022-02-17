@@ -3,29 +3,21 @@ import SuggestedEmail from "./SuggestedEmail";
 
 function SuggestedEmailsList() {
   const domain = "luciano-colabraro.com";
-
   const yearToday = new Date().getFullYear();
-  console.log("year Today", yearToday);
-
   const maximumYear = yearToday - 18;
-  console.log("maximum year", maximumYear);
-
   const minimunYear = yearToday - 60;
-  console.log("minimum year", minimunYear);
-
-  // const getRandomYear = (
-  //   Math.random() * (maximumYear - minimunYear) +
-  //   minimunYear
-  // ).toFixed(0);
 
   const randomYear = () => {
     const getRandomYear = (
       Math.random() * (maximumYear - minimunYear) +
       minimunYear
     ).toFixed(0);
-    if (getRandomYear > 1982) {
+
+    if (Math.random() < 0.5) {
       return getRandomYear.toString().slice(-2);
-    } else return getRandomYear;
+    } else {
+      return getRandomYear;
+    }
   };
 
   const generateRandomWords = (emailLength) => {
