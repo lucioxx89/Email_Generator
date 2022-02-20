@@ -1,5 +1,6 @@
 import SuggestedEmail from "./SuggestedEmail";
 import FirstNamesList from "../assets/FirstNamesList.json";
+import LastNamesList from "../assets/LastNamesList.json";
 
 function SuggestedEmailsList() {
   const domain = "luciano-colabraro.com";
@@ -20,12 +21,22 @@ function SuggestedEmailsList() {
     }
   };
 
-  const randomName = () => {
-    const maximumIndex = FirstNamesList.length - 1;
-    const minimumIndex = 0;
+  const randomLasttName = () => {
+    const lastNamesmaximumIndex = LastNamesList.length - 1;
+    const lastNamesminimumIndex = 0;
     const index = (
-      Math.random() * (maximumIndex - minimumIndex) +
-      minimumIndex
+      Math.random() * (lastNamesmaximumIndex - lastNamesminimumIndex) +
+      lastNamesminimumIndex
+    ).toFixed(0);
+
+    return LastNamesList[index];
+  };
+  const randomFirstName = () => {
+    const firstNamesmaximumIndex = FirstNamesList.length - 1;
+    const firstNamesminimumIndex = 0;
+    const index = (
+      Math.random() * (firstNamesmaximumIndex - firstNamesminimumIndex) +
+      firstNamesminimumIndex
     ).toFixed(0);
 
     return FirstNamesList[index].toLowerCase();
@@ -35,9 +46,16 @@ function SuggestedEmailsList() {
     const randomAliases = [];
     for (var i = 0; i < emailLength; i++) {
       if (Math.random() < 0.5) {
-        randomAliases.push(randomName() + randomYear());
+        randomAliases.push(
+          randomFirstName() + "." + randomLasttName() + randomYear()
+        );
       } else {
-        randomAliases.push(randomYear() + randomName());
+        randomAliases.push(
+          randomYear() +
+            randomFirstName().toString().slice(-1) +
+            "." +
+            randomLasttName()
+        );
       }
     }
 
