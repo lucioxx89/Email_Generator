@@ -7,8 +7,13 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Email Generator</h1>
-      <button onClick={refreshPage}>Refresh</button>
+      <h1>
+        Email Generator{" "}
+        <button onClick={refreshPage}>
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+      </h1>
+
       <SuggestedEmailsList></SuggestedEmailsList>
     </div>
   );
