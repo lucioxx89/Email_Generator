@@ -17,7 +17,7 @@ function SuggestedEmail(props) {
   return (
     <div
       onClick={clickHandler}
-      className={`p-6 mb-2 ${colorBackground} text-dark cursor-pointer`}
+      className={`p-6 mb-2 ${colorBackground} text-dark cursor-pointer `}
     >
       <span className="font-bold">{alias}</span>@{domain}
       <i className={`bi bi-${copyIcon} pl-10`}></i>
