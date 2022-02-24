@@ -12,10 +12,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Link to="/settings">
-          <i class="bi bi-gear"></i>
-        </Link>
         <h1>
+          <Link to="/settings">
+            <i class="bi bi-gear"></i>
+          </Link>
           Email Generator
           <button onClick={refreshPage}>
             <i class="bi bi-arrow-clockwise"></i>
