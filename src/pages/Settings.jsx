@@ -18,7 +18,7 @@ const Settings = (props) => {
             width: "50%",
             padding: "4px",
             border: "2px solid rgb(68, 144, 252)",
-            borderRadius: "4px",
+            borderRadius: "5px",
           }}
           onChange={changeHandler}
         />
