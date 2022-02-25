@@ -11,16 +11,24 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      <header
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <Link to="/settings">
+          <i class="bi bi-gear"></i>
+        </Link>
         <h1>
-          <Link to="/settings">
-            <i class="bi bi-gear"></i>
+          {" "}
+          <Link style={{ textDecoration: "none" }} to="/">
+            Email Generator
           </Link>
-          Email Generator
-          <button onClick={refreshPage}>
-            <i class="bi bi-arrow-clockwise"></i>
-          </button>
         </h1>
+        <button onClick={refreshPage}>
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
       </header>
       <main>
         <div>
