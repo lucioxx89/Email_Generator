@@ -1,20 +1,29 @@
 import { useState } from "react";
 
-const Settings = (props) => {
+const Settings = () => {
   const [enteredDomain, setEnteredDomain] = useState(" ");
 
   const domainChangeHandler = (event) => {
-    setEnteredDomain("event.target.value");
+    setEnteredDomain(event.target.value);
     console.log("input", event.target.value);
+  };
+
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+
+    const chosenDomain = { domain: enteredDomain };
+    console.log("hello", chosenDomain);
+    setEnteredDomain(""); //2 ways binding
   };
 
   return (
     <>
       <h1>Settings</h1>
-      <form>
+      <form onSubmit={formSubmitHandler}>
         <label>Chose your domain:</label>
         <input
           type="text"
+          value={enteredDomain} //2 ways binding, to get value of input back to empty string
           style={{
             width: "50%",
             padding: "4px",
@@ -37,7 +46,6 @@ const Settings = (props) => {
           Add{" "}
         </button>
       </form>
-      <p>domain={enteredDomain}</p>
     </>
   );
 };

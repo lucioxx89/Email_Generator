@@ -3,8 +3,8 @@ import FirstNamesList from "../assets/FirstNamesList.json";
 import LastNamesList from "../assets/LastNamesList.json";
 // import Settings from "../pages/Settings";
 
-function SuggestedEmailsList() {
-  const domain = "luciano";
+function SuggestedEmailsList(props) {
+  const domain = "luciano-colabraro";
   const yearToday = new Date().getFullYear();
   const maximumYear = yearToday - 18;
   const minimunYear = yearToday - 60;
