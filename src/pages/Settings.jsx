@@ -12,7 +12,7 @@ const Settings = () => {
     event.preventDefault();
 
     const chosenDomain = { domain: enteredDomain };
-    console.log("hello", chosenDomain);
+    console.log("my written Domain", chosenDomain);
     setEnteredDomain(""); //2 ways binding
   };
 
@@ -20,9 +20,10 @@ const Settings = () => {
     <>
       <h1>Settings</h1>
       <form onSubmit={formSubmitHandler}>
-        <label>Chose your domain:</label>
+        {/* <label>Chose your domain:</label> */}
         <input
           type="text"
+          placeholder="Enter your domain"
           value={enteredDomain} //2 ways binding, to get value of input back to empty string
           style={{
             width: "50%",
@@ -42,8 +43,7 @@ const Settings = () => {
             borderRadius: "5px",
           }}
         >
-          {" "}
-          Add{" "}
+          Add
         </button>
       </form>
     </>
