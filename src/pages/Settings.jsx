@@ -1,28 +1,43 @@
 import { useState } from "react";
 
 const Settings = (props) => {
-  const [domain, setDomain] = useState(" ");
+  const [enteredDomain, setEnteredDomain] = useState(" ");
 
-  const changeHandler = (event) => {
-    setDomain("event.target.value");
-    console.log(event.target.value);
+  const domainChangeHandler = (event) => {
+    setEnteredDomain("event.target.value");
+    console.log("input", event.target.value);
   };
 
   return (
     <>
-      <h1>Setting</h1>
+      <h1>Settings</h1>
       <form>
         <label>Chose your domain:</label>
         <input
+          type="text"
           style={{
             width: "50%",
             padding: "4px",
             border: "2px solid rgb(68, 144, 252)",
             borderRadius: "5px",
           }}
-          onChange={changeHandler}
+          onChange={domainChangeHandler}
         />
+        <button
+          type="submit"
+          style={{
+            width: "10%",
+            marginLeft: "1%",
+            padding: "4px",
+            border: "2px solid rgb(68, 144, 252)",
+            borderRadius: "5px",
+          }}
+        >
+          {" "}
+          Add{" "}
+        </button>
       </form>
+      <p>domain={enteredDomain}</p>
     </>
   );
 };
