@@ -1,21 +1,26 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// const MainHeader = () => {
-//   const refreshPage = () => {
-//     window.location.reload(false);
-//   };
+const MainHeader = (props) => {
+  return (
+    <header>
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <Link to="/settings">
+          <i className="bi-gear-fill bi--8xl"></i>
+        </Link>{" "}
+        <Link style={{ textDecoration: "none" }} to="/">
+          Email Generator
+        </Link>
+        <button onClick={props.refreshSuggestedEmailList}>
+          <i className="bi bi-arrow-clockwise"></i>
+        </button>
+      </h1>
+    </header>
+  );
+};
 
-//   <header>
-//     <h1>
-//       <Link to="/settings">
-//         <i class="bi bi-gear"></i>
-//       </Link>
-//       Email Generator
-//       <button onClick={refreshPage}>
-//         <i class="bi bi-arrow-clockwise"></i>
-//       </button>
-//     </h1>
-//   </header>;
-// };
-
-// export default MainHeader;
+export default MainHeader;

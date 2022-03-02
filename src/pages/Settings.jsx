@@ -1,24 +1,26 @@
 import { useState } from "react";
+import Cookies from "universal-cookie";
 
-const Settings = () => {
-  const [enteredDomain, setEnteredDomain] = useState(" ");
+const Settings = (props) => {
+  const cookies = new Cookies();
+  const [enteredDomain, setEnteredDomain] = useState("");
 
   const domainChangeHandler = (event) => {
     setEnteredDomain(event.target.value);
-    console.log("input", event.target.value);
   };
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
 
-    const chosenDomain = { domain: enteredDomain };
-    console.log("my written Domain", chosenDomain);
     setEnteredDomain(""); //2 ways binding
+    props.setDomain(enteredDomain);
+    cookies.set("domain", enteredDomain, { path: "/", maxAge: 500000000 });
   };
 
   return (
     <>
       <h1>Settings</h1>
+      <p>Current domain: {props.currentDomain}</p>
       <form onSubmit={formSubmitHandler}>
         {/* <label>Chose your domain:</label> */}
         <input
@@ -43,7 +45,7 @@ const Settings = () => {
             borderRadius: "5px",
           }}
         >
-          Add
+          Save
         </button>
       </form>
     </>

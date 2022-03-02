@@ -1,10 +1,9 @@
 import SuggestedEmail from "./SuggestedEmail";
 import FirstNamesList from "../assets/FirstNamesList.json";
 import LastNamesList from "../assets/LastNamesList.json";
-// import Settings from "../pages/Settings";
+import { useState } from "react";
 
 function SuggestedEmailsList(props) {
-  const domain = "luciano-colabraro";
   const yearToday = new Date().getFullYear();
   const maximumYear = yearToday - 18;
   const minimunYear = yearToday - 60;
@@ -22,7 +21,7 @@ function SuggestedEmailsList(props) {
     }
   };
 
-  const randomLasttName = () => {
+  const randomLastName = () => {
     const lastNamesmaximumIndex = LastNamesList.length - 1;
     const lastNamesminimumIndex = 0;
     const index = (
@@ -48,14 +47,14 @@ function SuggestedEmailsList(props) {
     for (var i = 0; i < emailLength; i++) {
       if (Math.random() < 0.5) {
         randomAliases.push(
-          randomFirstName() + "." + randomLasttName() + randomYear()
+          randomFirstName() + "." + randomLastName() + randomYear()
         );
       } else {
         randomAliases.push(
           randomYear() +
             randomFirstName().toString().slice(-1) +
             "." +
-            randomLasttName()
+            randomLastName()
         );
       }
     }
@@ -67,7 +66,7 @@ function SuggestedEmailsList(props) {
     <div>
       <ul className="list-group-flush">
         {generateRandomAliases(10).map((alias, index) => (
-          <SuggestedEmail alias={alias} domain={domain} key={index} />
+          <SuggestedEmail alias={alias} domain={props.domain} key={index} />
         ))}
       </ul>
     </div>

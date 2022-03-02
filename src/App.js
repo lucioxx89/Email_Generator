@@ -1,43 +1,42 @@
 import SuggestedEmailsList from "./components/SuggestedEmailsList";
 import Settings from "./pages/Settings";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
+import MainHeader from "./lib/MainHeader";
+import { useState } from "react";
+import Cookies from "universal-cookie";
 
 import "./App.css";
 
 function App() {
-  const refreshPage = () => {
-    window.location.reload(false);
+  // const refreshPage = () => {
+  //   window.location.reload(false);
+  // };
+  const cookies = new Cookies();
+  const cookieValue = cookies.get("domain");
+
+  const [domain, setDomain] = useState(cookieValue || "example.com");
+  const [randomRenderKey, setRandomRenderKey] = useState(Math.random());
+
+  const refreshSuggestedEmailList = () => {
+    setRandomRenderKey(Math.random());
   };
 
   return (
     <div className="App">
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <Link to="/settings">
-          <i class="bi bi-gear"></i>
-        </Link>
-        <h1>
-          {" "}
-          <Link style={{ textDecoration: "none" }} to="/">
-            Email Generator
-          </Link>
-        </h1>
-        <button onClick={refreshPage}>
-          <i class="bi bi-arrow-clockwise"></i>
-        </button>
-      </header>
       <main>
         <div>
+          <MainHeader
+            refreshSuggestedEmailList={refreshSuggestedEmailList}
+          ></MainHeader>
           <Route exact path="/">
-            <SuggestedEmailsList></SuggestedEmailsList>
+            <SuggestedEmailsList
+              key={randomRenderKey}
+              domain={domain}
+            ></SuggestedEmailsList>
           </Route>
 
           <Route path="/settings">
-            <Settings />
+            <Settings currentDomain={domain} setDomain={setDomain} />
           </Route>
         </div>
       </main>
