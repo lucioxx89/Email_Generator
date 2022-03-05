@@ -65,14 +65,14 @@ function SuggestedEmailsList(props) {
   return (
     <div>
       <ul
+        style={{
+          padding: "15px",
 
-      // style={{
-      //   padding: "2px",
-      //   textAlign: "justify",
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   justifyContent: "space-between",
-      // }}
+          // fontSize: "16px",
+          // display: "flex",
+          // flexDirection: "column",
+          // justifyContent: "flex-start",
+        }}
       >
         {generateRandomAliases(10).map((alias, index) => (
           <SuggestedEmail alias={alias} domain={props.domain} key={index} />
