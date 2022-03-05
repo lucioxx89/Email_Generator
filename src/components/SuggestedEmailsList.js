@@ -64,7 +64,16 @@ function SuggestedEmailsList(props) {
 
   return (
     <div>
-      <ul className="list-group-flush">
+      <ul
+
+      // style={{
+      //   padding: "2px",
+      //   textAlign: "justify",
+      //   display: "flex",
+      //   flexDirection: "column",
+      //   justifyContent: "space-between",
+      // }}
+      >
         {generateRandomAliases(10).map((alias, index) => (
           <SuggestedEmail alias={alias} domain={props.domain} key={index} />
         ))}

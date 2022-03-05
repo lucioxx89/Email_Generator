@@ -19,9 +19,7 @@ function SuggestedEmail(props) {
         text={`${alias}@${domain}`}
         onCopy={() => styleAsCopied()}
       >
-        <div
-          className={`p-6 mb-2 ${colorBackground} text-dark cursor-pointer `}
-        >
+        <div className={`p-6 mb-2 ${colorBackground} text-dark cursor-pointer`}>
           <span className="font-bold">{alias}</span>@{domain}
           <i className={`bi bi-${copyIcon} pl-10`}></i>
         </div>

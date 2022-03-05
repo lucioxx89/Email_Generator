@@ -19,10 +19,8 @@ const Settings = (props) => {
 
   return (
     <>
-      <h1>Settings</h1>
-      <p>Current domain: {props.currentDomain}</p>
+      <p style={{ padding: "20px" }}>Current domain: {props.currentDomain}</p>
       <form onSubmit={formSubmitHandler}>
-        {/* <label>Chose your domain:</label> */}
         <input
           type="text"
           placeholder="Enter your domain"
