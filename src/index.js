@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import * as bootstrap from "bootstrap";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+// import * as bootstrap from "bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter } from "react-router-dom";
 

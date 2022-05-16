@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+// import * as bootstrap from "bootstrap";
+
 const MainHeader = (props) => {
   return (
     <header>
