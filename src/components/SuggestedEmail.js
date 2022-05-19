@@ -8,10 +8,18 @@ function SuggestedEmail(props) {
   const [copyIcon, setCopyIcon] = useState("clipboard");
   const [colorBackground, setColorBackground] = useState("bg-light");
 
+  // const [resetIcon, setResetIcon] = useState("clipboard");
+  // const [resetColorBackground, setResetColorBackground] = useState("bg-light");
+
   const styleAsCopied = () => {
     setCopyIcon("check-lg");
     setColorBackground("bg-green-200");
   };
+
+  // const resetValue = () => {
+  //   setResetIcon("clipboard");
+  //   setResetColorBackground("bg-light");
+  // };
 
   return (
     <>
@@ -19,7 +27,11 @@ function SuggestedEmail(props) {
         text={`${alias}@${domain}`}
         onCopy={() => styleAsCopied()}
       >
-        <div className={`p-6 mb-2 ${colorBackground} text-dark cursor-pointer`}>
+        <div
+          // reset={resetValue}
+          className={`p-6 mb-2 ${colorBackground} text-dark cursor-pointer`}
+          // className={`p-6 mb-2 ${setResetColorBackground} text-dark cursor-pointer`}
+        >
           <span className="font-bold">{alias}</span>@{domain}
           <i className={`bi bi-${copyIcon} ml-5`}></i>
         </div>
